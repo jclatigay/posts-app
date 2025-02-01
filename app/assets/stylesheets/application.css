@@ -8,3 +8,16 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+
+/*
+ *= require root
+ *= require navbar
+ *= require posts
+ *= require post_show
+ *= require post_form
+ *= require new_post
+ *= require login
+ *= require post_edit
+ *= require account
+ *= require_self
+ */

@@ -1,0 +1,19 @@
+<div class="post-form-container">
+  <div class="page-header">
+    <div class="header-content">
+      <h1 class="page-title">
+        <i class="fa-solid fa-pen-to-square"></i>
+        Edit Post
+      </h1>
+      <p class="page-subtitle">Make changes to your post</p>
+    </div>
+
+    <%= link_to post_path(@post), class: "btn btn-outline-secondary" do %>
+      <i class="fa-solid fa-arrow-left"></i> Back to Post
+    <% end %>
+  </div>
+
+  <div class="form-wrapper">
+    <%= render 'form', post: @post %>
+  </div>
+</div> 

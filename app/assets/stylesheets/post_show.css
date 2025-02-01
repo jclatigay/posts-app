@@ -1,0 +1,107 @@
+.post-show-container {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+}
+
+.post-show-header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.post-show-title {
+  color: var(--bs-text-primary);
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.post-show-meta {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  color: var(--bs-text-muted);
+  font-size: 0.95rem;
+}
+
+.meta-item { 
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.status-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+.status-badge.draft {
+  background-color: rgba(var(--bs-warning), 0.1);
+  color: var(--bs-warning);
+}
+
+.status-badge.published {
+  background-color: rgba(var(--bs-success), 0.1);
+  color: var(--bs-success);
+}
+
+.status-badge i {
+  font-size: 0.5rem;
+}
+
+.post-show-content {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
+  line-height: 1.7;
+  color: var(--bs-text-secondary);
+}
+
+.post-show-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.action-buttons {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.btn-link {
+  color: var(--bs-text-muted);
+  text-decoration: none;
+}
+
+.btn-link:hover {
+  color: var(--bs-primary);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .post-show-title {
+    font-size: 2rem;
+  }
+
+  .post-show-meta {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .post-show-actions {
+    flex-direction: column-reverse;
+    gap: 1rem;
+  }
+
+  .action-buttons {
+    width: 100%;
+    justify-content: center;
+  }
+} 

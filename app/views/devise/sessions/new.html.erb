@@ -1,0 +1,47 @@
+<div class="login-container">
+  <div class="login-card">
+    <div class="login-header">
+      <i class="fa-solid fa-right-to-bracket login-icon"></i>
+      <h2>Log in</h2>
+    </div>
+
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "login-form" }) do |f| %>
+      <div class="form-group">
+        <%= f.label :email, class: "form-label" %>
+        <div class="input-group">
+          <span class="input-group-text">
+            <i class="fa-solid fa-envelope"></i>
+          </span>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", 
+              class: "form-control", 
+              placeholder: "Enter your email" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :password, class: "form-label" %>
+        <div class="input-group">
+          <span class="input-group-text">
+            <i class="fa-solid fa-lock"></i>
+          </span>
+          <%= f.password_field :password, autocomplete: "current-password", 
+              class: "form-control",
+              placeholder: "Enter your password" %>
+        </div>
+      </div>
+
+      <% if devise_mapping.rememberable? %>
+        <div class="form-check">
+          <%= f.check_box :remember_me, class: "form-check-input" %>
+          <%= f.label :remember_me, class: "form-check-label" %>
+        </div>
+      <% end %>
+
+      <%= f.submit "Log in", class: "btn btn-primary w-100" %>
+    <% end %>
+
+    <div class="login-links">
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,276 @@
+.login-container {
+  min-height: calc(100vh - 70px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem;
+  background-color: var(--bs-bg-light);
+}
+
+.login-card {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.login-icon {
+  font-size: 2.5rem;
+  color: var(--bs-primary);
+  margin-bottom: 1rem;
+}
+
+.login-header h2 {
+  color: var(--bs-text-primary);
+  font-weight: 700;
+  margin: 0;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-label {
+  color: var(--bs-text-primary);
+  font-weight: 600;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.input-group-text {
+  background-color: white;
+  border-right: none;
+  padding-right: auto;
+}
+
+.input-group-text i {
+  color: var(--bs-text-muted);
+  width: 1rem;
+  text-align: center;
+}
+
+.form-control {
+  border-left: none;
+  padding: 0.75rem;
+}
+
+.input-group .form-control:focus {
+  border-left: none;
+  box-shadow: none;
+}
+
+.input-group:focus-within {
+  box-shadow: 0 0 0 3px rgba(var(--bs-primary-rgb), 0.1);
+}
+
+.input-group:focus-within .input-group-text {
+  border-color: var(--bs-primary);
+}
+
+.input-group:focus-within .form-control {
+  border-color: var(--bs-primary);
+}
+
+.form-check {
+  margin-bottom: 1rem;
+}
+
+.form-check-input:checked {
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
+}
+
+.btn-primary {
+  padding: 0.75rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(var(--bs-primary-rgb), 0.2);
+}
+
+.login-links {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.login-links a {
+  color: var(--bs-primary);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.login-links a:hover {
+  color: var(--bs-primary-dark);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .login-card {
+    padding: 1.5rem;
+  }
+}
+
+/* Add these new styles to your existing login.css file */
+
+.password-hint {
+  color: var(--bs-text-muted);
+  font-size: 0.85rem;
+  font-weight: normal;
+  margin-left: 0.5rem;
+}
+
+.error-messages {
+  background-color: rgba(var(--bs-danger-rgb), 0.1);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.error-messages h2 {
+  color: var(--bs-danger);
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.error-messages ul {
+  margin: 0;
+  padding-left: 1.25rem;
+  color: var(--bs-danger);
+  font-size: 0.9rem;
+}
+
+.error-messages li {
+  margin: 0.25rem 0;
+}
+
+/* Add some spacing between form groups */
+.login-form .form-group {
+  margin-bottom: 0.5rem;
+}
+
+.login-subtext {
+  color: var(--bs-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 1rem 0 0;
+  text-align: center;
+}
+
+/* Adjust the icon for the password reset page */
+.login-header .fa-key {
+  background: rgba(var(--bs-primary-rgb), 0.1);
+  padding: 1rem;
+  border-radius: 50%;
+  color: var(--bs-primary);
+}
+
+/* Add a subtle animation to the submit button */
+.btn-primary {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120%;
+  height: 120%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translate(-50%, -50%) scale(0);
+  border-radius: 50%;
+  transition: transform 0.4s ease;
+}
+
+.btn-primary:active::after {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Style success/notice messages */
+.alert {
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.alert-success {
+  background-color: rgba(var(--bs-success-rgb), 0.1);
+  color: var(--bs-success);
+  border: 1px solid rgba(var(--bs-success-rgb), 0.2);
+}
+
+.alert-info {
+  background-color: rgba(var(--bs-info-rgb), 0.1);
+  color: var(--bs-info);
+  border: 1px solid rgba(var(--bs-info-rgb), 0.2);
+}
+
+.alert i {
+  font-size: 1.1rem;
+}
+
+/* Enhance the links in the footer */
+.login-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.login-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.login-links a i {
+  font-size: 0.9em;
+}
+
+/* Add hover effect to the card */
+.login-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .login-subtext {
+    font-size: 0.9rem;
+    padding: 0 1rem;
+  }
+  
+  .login-card {
+    margin: 1rem;
+  }
+} 

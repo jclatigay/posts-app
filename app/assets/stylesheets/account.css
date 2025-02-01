@@ -1,0 +1,94 @@
+/* Account settings specific styles */
+.form-section {
+  margin: 2rem 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--bs-text-primary);
+  margin: 0 0 0.5rem 0;
+}
+
+.section-hint {
+  color: var(--bs-text-muted);
+  font-size: 0.9rem;
+  margin: 0 0 1rem 0;
+}
+
+.password-hint {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--bs-text-muted);
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+}
+
+.password-hint i {
+  font-size: 0.9em;
+}
+
+.danger-zone {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: rgba(var(--bs-danger-rgb), 0.05);
+  border: 1px solid rgba(var(--bs-danger-rgb), 0.1);
+  border-radius: 8px;
+}
+
+.danger-title {
+  color: var(--bs-danger);
+  font-size: 1.1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 0 0.75rem 0;
+}
+
+.danger-text {
+  color: var(--bs-text-secondary);
+  font-size: 0.9rem;
+  margin: 0 0 1rem 0;
+}
+
+.btn-outline-danger {
+  border-width: 1.5px;
+  transition: all 0.2s ease;
+}
+
+.btn-outline-danger:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(var(--bs-danger-rgb), 0.2);
+}
+
+/* Override some login container styles for the settings page */
+.login-container {
+  padding: 3rem 1rem;
+}
+
+.login-card {
+  max-width: 500px;
+}
+
+.login-icon {
+  background: rgba(var(--bs-primary-rgb), 0.1);
+  padding: 1rem;
+  border-radius: 50%;
+  font-size: 1.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .form-section {
+    margin: 1.5rem 0;
+    padding-top: 1.5rem;
+  }
+
+  .danger-zone {
+    padding: 1rem;
+  }
+} 

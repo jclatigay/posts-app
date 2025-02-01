@@ -1,0 +1,57 @@
+<div class="post-show-container">
+  <div class="post-show-header">
+    <h1 class="post-show-title"><%= @post.title %></h1>
+    
+    <div class="post-show-meta">
+      <span class="meta-item">
+        <i class="fa-solid fa-user"></i>
+        <%= @post.user.email %>
+      </span>
+      <span class="meta-item">
+        <i class="fa-regular fa-clock"></i>
+        <%= @post.created_at.strftime("%B %d, %Y") %>
+      </span>
+      <span class="meta-item status-badge <%= @post.status %>">
+        <i class="fa-solid fa-circle"></i>
+        <%= @post.status %>
+      </span>
+    </div>
+  </div>
+
+  <div class="post-show-content">
+    <%= @post.content %>
+  </div>
+
+  <div class="post-show-actions">
+    <div class="action-buttons">
+      <% if policy(@post).edit? %>
+        <%= link_to edit_post_path(@post), class: "btn btn-outline-primary" do %>
+          <i class="fa-solid fa-pen"></i> Edit
+        <% end %>
+      <% end %>
+      
+      <% if policy(@post).publish? && @post.draft? %>
+        <%= button_to publish_post_path(@post), 
+            method: :patch, 
+            class: "btn btn-primary" do %>
+          <i class="fa-solid fa-paper-plane"></i> Publish
+        <% end %>
+      <% end %>
+      
+      <% if policy(@post).destroy? %>
+        <%= link_to post_path(@post), 
+            class: "btn btn-outline-danger",
+            data: { 
+              turbo_method: :delete, 
+              turbo_confirm: 'Are you sure you want to delete this post?' 
+            } do %>
+          <i class="fa-solid fa-trash"></i> Delete
+        <% end %>
+      <% end %>
+    </div>
+
+    <%= link_to posts_path, class: "btn btn-link" do %>
+      <i class="fa-solid fa-arrow-left"></i> Back to Posts
+    <% end %>
+  </div>
+</div> 

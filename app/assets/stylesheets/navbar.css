@@ -1,0 +1,33 @@
+.navbar-custom {
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.075);
+}
+
+.navbar-brand-custom {
+  font-weight: 700;
+  color: var(--bs-primary);
+}
+
+.nav-link-active {
+  font-weight: 600;
+}
+
+.user-avatar {
+  background-color: rgba(var(--bs-primary-rgb), 0.1);
+  padding: 0.5rem;
+  border-radius: 50%;
+}
+
+.user-avatar i {
+  color: var(--bs-primary);
+}
+
+.dropdown-menu-custom {
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.075);
+  margin-top: 0.5rem;
+}
+
+.dropdown-item-custom {
+  padding: 0.5rem 1rem;
+} 

@@ -1,0 +1,50 @@
+<div class="posts-container">
+  <div class="posts-header">
+    <h1 class="posts-title">Posts</h1>
+    <% if policy(Post).new? %>
+      <%= link_to new_post_path, class: "btn btn-primary" do %>
+        <i class="fa-solid fa-plus"></i> New Post
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="posts-grid">
+    <% @posts.each do |post| %>
+      <div class="post-card">
+        <div class="post-card-content">
+          <h2 class="post-title">
+            <%= link_to post.title, post_path(post), class: "post-link" %>
+          </h2>
+          
+          <div class="post-meta">
+            <span class="post-author">
+              <i class="fa-solid fa-user"></i> <%= post.user.email %>
+            </span>
+            <span class="post-status status-badge status-<%= post.status %>">
+              <i class="fa-solid fa-circle"></i> <%= post.status.titleize %>
+            </span>
+          </div>
+        </div>
+
+        <div class="post-actions">
+          <% if policy(post).edit? %>
+            <%= link_to edit_post_path(post), class: "btn btn-outline-primary btn-sm" do %>
+              <i class="fa-solid fa-pen"></i> Edit
+            <% end %>
+          <% end %>
+          
+          <% if policy(post).destroy? %>
+            <%= link_to post_path(post),
+                class: "btn btn-outline-danger btn-sm",
+                data: { 
+                  turbo_method: :delete,
+                  turbo_confirm: 'Are you sure you want to delete this post?' 
+                } do %>
+              <i class="fa-solid fa-trash"></i> Delete
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div> 

@@ -1,0 +1,46 @@
+<div class="post-form-container">
+  <%= form_with(model: post, class: "post-form") do |form| %>
+    <% if post.errors.any? %>
+      <div class="error-messages">
+        <div class="error-header">
+          <i class="fa-solid fa-circle-exclamation"></i>
+          <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+        </div>
+        <ul>
+          <% post.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="form-group">
+      <%= form.label :title, class: "form-label" %>
+      <%= form.text_field :title, class: "form-control", placeholder: "Enter post title" %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :content, class: "form-label" %>
+      <%= form.text_area :content, class: "form-control", rows: 10, placeholder: "Write your post content here..." %>
+    </div>
+    
+    <% if policy(post).publish? %>
+      <div class="form-group">
+        <%= form.label :status, class: "form-label" %>
+        <%= form.select :status, 
+            Post.statuses.keys.map { |s| [s.titleize, s] }, 
+            {}, 
+            class: "form-select" %>
+      </div>
+    <% end %>
+
+    <div class="form-actions">
+      <%= link_to posts_path, class: "btn btn-outline-secondary" do %>
+        <i class="fa-solid fa-arrow-left"></i> Cancel
+      <% end %>
+      
+      <%= form.submit class: "btn btn-primary" do %>
+        <i class="fa-solid fa-check"></i> Save Post
+      <% end %>
+    </div>
+  <% end %> 

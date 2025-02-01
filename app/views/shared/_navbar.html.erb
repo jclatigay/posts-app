@@ -1,0 +1,64 @@
+<nav class="navbar navbar-expand-lg navbar-custom">
+  <div class="container">
+    <%= link_to root_path, class: "navbar-brand navbar-brand-custom" do %>
+      <i class="fa-solid fa-pen-to-square"></i> BlogApp
+    <% end %>
+    
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <%= link_to root_path, class: "nav-link #{current_page?(root_path) ? 'nav-link-active' : ''}" do %>
+            <i class="fa-solid fa-house"></i> Home
+          <% end %>
+        </li>
+      </ul>
+
+      <ul class="navbar-nav align-items-center">
+        <% if current_user %>
+          <li class="nav-item me-2">
+            <%= link_to posts_path, class: "nav-link #{current_page?(posts_path) ? 'nav-link-active' : ''}" do %>
+              <i class="fa-solid fa-file-lines"></i> Posts
+            <% end %>
+          </li>
+          
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle d-flex align-items-center gap-2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <div class="user-avatar">
+                <i class="fa-solid fa-user-circle"></i>
+              </div>
+              <span class="fw-medium"><%= current_user.email %></span>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-custom">
+              <li>
+                <%= link_to edit_user_registration_path, class: "dropdown-item dropdown-item-custom" do %>
+                  <i class="fa-solid fa-gear"></i> Settings
+                <% end %>
+              </li>
+              <li><hr class="dropdown-divider"></li>
+              <li>
+                <%= button_to destroy_user_session_path, method: :delete, class: "dropdown-item dropdown-item-custom text-danger" do %>
+                  <i class="fa-solid fa-right-from-bracket"></i> Logout
+                <% end %>
+              </li>
+            </ul>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to new_user_registration_path, class: "nav-link me-2" do %>
+              <i class="fa-solid fa-user-plus"></i> Sign Up
+            <% end %>
+          </li>
+          <li class="nav-item">
+            <%= link_to new_user_session_path, class: "btn btn-primary px-3" do %>
+              <i class="fa-solid fa-right-to-bracket"></i> Login
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,57 @@
+:root {
+  /* Primary Colors */
+  --bs-primary: #00085e;  /* Dark Blue */
+  --bs-primary-rgb: 26, 35, 126;
+  --bs-primary-dark: #000430;
+  --bs-primary-light: #534bae;
+
+  /* Complementary Colors */
+  --bs-secondary: #455a64;  /* Blue Grey */
+  --bs-secondary-rgb: 69, 90, 100;
+  
+  /* Accent Colors */
+  --bs-accent: #ffd740;  /* Amber accent */
+  --bs-accent-rgb: 255, 215, 64;
+  
+  /* Background Colors */
+  --bs-bg-light: #f5f7fa;
+  --bs-bg-dark: #1c1c1c;
+  
+  /* Text Colors */
+  --bs-text-primary: #1a237e;
+  --bs-text-secondary: #455a64;
+  --bs-text-muted: #78909c;
+  
+  /* Status Colors */
+  --bs-success: #43a047;
+  --bs-danger: #d32f2f;
+  --bs-warning: #f9a825;
+  --bs-info: #0288d1;
+}
+
+/* Bootstrap overrides */
+.btn-primary {
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
+}
+
+.btn-primary:hover {
+  background-color: var(--bs-primary-dark);
+  border-color: var(--bs-primary-dark);
+}
+
+.text-primary {
+  color: var(--bs-primary) !important;
+}
+
+.bg-primary {
+  background-color: var(--bs-primary) !important;
+}
+
+.link-primary {
+  color: var(--bs-primary);
+}
+
+.link-primary:hover {
+  color: var(--bs-primary-dark);
+}
